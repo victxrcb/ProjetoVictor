@@ -19,22 +19,26 @@ const Login = () => {
       return;
     }
     setLoading(true);
-    // Simulated login
     await new Promise((r) => setTimeout(r, 1000));
     toast.success("Login realizado com sucesso!");
     navigate("/dashboard");
   };
 
   return (
-    <div className="min-h-screen gradient-login animate-gradient-shift flex items-center justify-center p-4 relative overflow-hidden">
-      {/* Decorative blurs */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+    <div className="min-h-screen gradient-login animate-gradient-shift flex relative overflow-hidden">
+      {/* Animated floating orbs */}
+      <div className="absolute top-[10%] left-[5%] w-80 h-80 bg-primary/8 rounded-full blur-3xl animate-float-slow" />
+      <div className="absolute bottom-[10%] right-[10%] w-96 h-96 bg-accent/15 rounded-full blur-3xl animate-float-medium" />
+      <div className="absolute top-[50%] left-[40%] w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float-fast" />
+      <div className="absolute top-[20%] right-[30%] w-48 h-48 bg-accent/10 rounded-full blur-2xl animate-float-medium" />
 
-      <div className="w-full max-w-5xl grid md:grid-cols-2 gap-8 items-start pt-[12vh] relative z-10">
-        {/* Left side - Branding */}
-        <div className="animate-fade-in-up space-y-6 text-center md:text-left">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground leading-none" style={{ fontFamily: "'Playfair Display', serif" }}>
+      {/* Left side - Branding (vertically centered) */}
+      <div className="flex-1 flex flex-col justify-center px-8 md:px-16 lg:px-24 relative z-10">
+        <div className="animate-fade-in-up space-y-6 max-w-xl">
+          <h1
+            className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground leading-[0.95]"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
             CONFIRMAÇÃO
             <br />
             EXATA
@@ -45,12 +49,14 @@ const Login = () => {
             Seu braço direito na confirmação.
           </p>
         </div>
+      </div>
 
-        {/* Right side - Login form */}
-        <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+      {/* Right side - Login form (fixed to the right, vertically centered) */}
+      <div className="w-full max-w-md flex items-center justify-center px-6 md:px-10 relative z-10">
+        <div className="animate-fade-in-up w-full" style={{ animationDelay: "0.2s" }}>
           <form
             onSubmit={handleLogin}
-            className="gradient-login-card rounded-2xl p-8 shadow-card space-y-6 max-w-sm mx-auto md:ml-auto"
+            className="gradient-login-card rounded-2xl p-8 shadow-card space-y-6 w-full"
           >
             <h2 className="text-3xl font-bold text-foreground text-center">Login</h2>
 
