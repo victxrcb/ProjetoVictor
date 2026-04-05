@@ -16,7 +16,7 @@ interface DataTableProps<T> {
   loading?: boolean;
 }
 
-function DataTable<T extends Record<string, unknown>>({ title, icon, columns, data, loading }: DataTableProps<T>) {
+function DataTable<T extends object>({ title, icon, columns, data, loading }: DataTableProps<T>) {
   const [search, setSearch] = useState("");
 
   const filtered = data.filter((row) =>
