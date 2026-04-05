@@ -1,6 +1,15 @@
-import { User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { User, LogOut } from "lucide-react";
+import { toast } from "sonner";
 
 const AppSidebar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    toast.success("Logout realizado com sucesso!");
+    navigate("/");
+  };
+
   return (
     <aside className="w-56 shrink-0 bg-sidebar text-sidebar-foreground flex flex-col items-center py-8 gap-4 min-h-screen animate-slide-in-left">
       {/* Avatar */}
@@ -9,7 +18,7 @@ const AppSidebar = () => {
       </div>
       <span className="text-sm font-bold tracking-wide">USER TEST</span>
 
-      <div className="mt-6 w-full px-4 space-y-1">
+      <div className="mt-6 w-full px-4 space-y-1 flex-1">
         <div className="text-[10px] uppercase tracking-widest text-sidebar-foreground/50 px-3 mb-2">Menu</div>
         {["Dashboard", "Borderôs", "Agendamentos", "Relatórios", "Configurações"].map((item) => (
           <button
@@ -19,6 +28,17 @@ const AppSidebar = () => {
             {item}
           </button>
         ))}
+      </div>
+
+      {/* Logout */}
+      <div className="w-full px-4 pb-2">
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm font-medium text-destructive/80 hover:bg-destructive/10 hover:text-destructive transition-colors duration-150"
+        >
+          <LogOut size={16} />
+          Sair da conta
+        </button>
       </div>
     </aside>
   );
