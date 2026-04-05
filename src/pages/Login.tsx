@@ -31,10 +31,10 @@ const Login = () => {
       <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
 
-      <div className="w-full max-w-5xl grid md:grid-cols-2 gap-8 items-center relative z-10">
+      <div className="w-full max-w-5xl grid md:grid-cols-2 gap-8 items-start pt-[12vh] relative z-10">
         {/* Left side - Branding */}
         <div className="animate-fade-in-up space-y-6 text-center md:text-left">
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground leading-none">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground leading-none" style={{ fontFamily: "'Playfair Display', serif" }}>
             CONFIRMAÇÃO
             <br />
             EXATA
