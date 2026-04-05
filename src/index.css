@@ -142,6 +142,21 @@
   0%, 100% { box-shadow: 0 0 8px hsla(152, 70%, 40%, 0.2); }
   50% { box-shadow: 0 0 20px hsla(152, 70%, 40%, 0.4); }
 }
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(30px, -20px); }
+  50% { transform: translate(-10px, 25px); }
+  75% { transform: translate(-25px, -10px); }
+}
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-20px, 15px); }
+  66% { transform: translate(15px, -25px); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(20px, -15px); }
+}
 
 .animate-fade-in-up {
   animation: fade-in-up 0.5s ease-out forwards;
@@ -158,6 +173,15 @@
 .animate-gradient-shift {
   background-size: 200% 200%;
   animation: gradient-shift 8s ease infinite;
+}
+.animate-float-slow {
+  animation: float-slow 12s ease-in-out infinite;
+}
+.animate-float-medium {
+  animation: float-medium 8s ease-in-out infinite;
+}
+.animate-float-fast {
+  animation: float-fast 6s ease-in-out infinite;
 }
 
 .skeleton-loading {
