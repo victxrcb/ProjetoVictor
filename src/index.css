@@ -58,6 +58,41 @@
   }
 }
 
+/* ── Dark mode variables ────────────────────────────── */
+.dark {
+  --background: 224 30% 10%;
+  --foreground: 210 20% 92%;
+
+  --card: 224 28% 14%;
+  --card-foreground: 210 20% 92%;
+
+  --popover: 224 28% 14%;
+  --popover-foreground: 210 20% 92%;
+
+  --primary: 152 60% 42%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 224 20% 20%;
+  --secondary-foreground: 210 20% 85%;
+
+  --muted: 224 20% 18%;
+  --muted-foreground: 215 15% 55%;
+
+  --accent: 224 20% 22%;
+  --accent-foreground: 210 20% 92%;
+
+  --destructive: 0 72% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 224 20% 22%;
+  --input: 224 20% 22%;
+  --ring: 152 60% 42%;
+
+  --sidebar-background: 152 80% 8%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-border: 152 50% 14%;
+}
+
 @layer base {
   * {
     @apply border-border;

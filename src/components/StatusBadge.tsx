@@ -5,20 +5,28 @@ interface StatusBadgeProps {
 }
 
 const statusConfig = {
-  pendente: { label: "Pendente", className: "bg-warning/15 text-warning border-warning/30" },
-  confirmado: { label: "Confirmado", className: "bg-success/15 text-success border-success/30" },
-  recusado: { label: "Recusado", className: "bg-destructive/15 text-destructive border-destructive/30" },
+  pendente: { 
+    label: "Pendente", 
+    className: "bg-amber-50 text-amber-700 border-amber-200",
+    dotColor: "bg-amber-500"
+  },
+  confirmado: { 
+    label: "Confirmado", 
+    className: "bg-green-50 text-green-700 border-green-200",
+    dotColor: "bg-green-500"
+  },
+  recusado: { 
+    label: "Recusado", 
+    className: "bg-red-50 text-red-700 border-red-200",
+    dotColor: "bg-red-500"
+  },
 };
 
 const StatusBadge = ({ status }: StatusBadgeProps) => {
   const config = statusConfig[status];
   return (
-    <span className={cn("inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border", config.className)}>
-      <span className={cn("w-1.5 h-1.5 rounded-full mr-1.5", {
-        "bg-warning": status === "pendente",
-        "bg-success": status === "confirmado",
-        "bg-destructive": status === "recusado",
-      })} />
+    <span className={cn("inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-medium border transition-all hover:shadow-md", config.className)}>
+      <span className={cn("w-2 h-2 rounded-full mr-2 animate-pulse", config.dotColor)} />
       {config.label}
     </span>
   );
